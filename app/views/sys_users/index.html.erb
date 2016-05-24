@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sys Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sys_users.each do |sys_user| %>
+      <tr>
+        <td><%= sys_user.username %></td>
+        <td><%= sys_user.password %></td>
+        <td><%= sys_user.email %></td>
+        <td><%= link_to 'Show', sys_user %></td>
+        <td><%= link_to 'Edit', edit_sys_user_path(sys_user) %></td>
+        <td><%= link_to 'Destroy', sys_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sys user', new_sys_user_path %>
